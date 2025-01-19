@@ -1,104 +1,156 @@
-/* Style général du site */
+/* Style général */
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
   background: linear-gradient(to bottom, #FFC0CB, #FFF8F0);
   color: #800020;
   text-align: center;
+  transition: background 0.3s, color 0.3s;
+}
+/* Style général des images d'activités */
+.activity-img {
+  width: 100%;
+  max-width: 600px; /* Limite la largeur des images */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Style spécifique pour les petites images */
+.small-img {
+  max-width: 300px; /* Réduit la taille des deux premières photos */
+  height: auto; /* Garde les proportions */
+  margin: 10px auto;
+}
+
+/* Mode sombre */
+.dark-mode {
+  background: #222;
+  color: #fff;
+}
+
+/* Barre de navigation */
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: #800020;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
 }
 
 /* En-tête */
 header {
-  background-color: #800020;
-  color: white;
   padding: 20px;
 }
 
 h1 {
-  margin: 0;
   font-size: 2.5em;
 }
 
 p {
   font-size: 1.2em;
-  line-height: 1.6;
 }
 
-/* Conteneur principal */
-.container {
+/* Galerie */
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
   padding: 20px;
 }
 
-.btn {
+.gallery-container img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.gallery-container img:hover {
+  transform: scale(1.1);
+}
+
+/* Lightbox */
+.lightbox {
+  position: relative;
   display: inline-block;
-  padding: 10px 20px;
+}
+
+.lightbox img {
+  width: 100%;
+  height: auto;
+}
+
+/* Formulaire de contact */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: auto;
+}
+
+form input, form textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #800020;
+  border-radius: 5px;
+}
+
+form button {
+  background-color: #800020;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
   background-color: #FFC0CB;
   color: #800020;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-top: 20px;
 }
 
-.btn:hover {
+/* Boutons */
+.theme-btn, .scroll-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
   background-color: #800020;
-  color: #FFF8F0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+  display: none;
 }
 
-/* Section activités */
-#activites {
-  padding: 20px;
-  background-color: #FFF8F0;
+.theme-btn {
+  top: 20px;
+  right: 20px;
 }
 
-.activite {
-  margin-bottom: 40px;
-  text-align: center;
+.scroll-btn {
+  display: block;
 }
 
-.activite img {
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.activite h3 {
+.theme-btn:hover, .scroll-btn:hover {
+  background-color: #FFC0CB;
   color: #800020;
-  margin-top: 10px;
-}
-
-.activite p {
-  color: #333;
-  font-size: 1.1em;
-  line-height: 1.6;
-}
-/* À ajouter dans ton fichier CSS */
-#contact {
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  margin: 30px auto;
-  max-width: 600px;
-}
-
-#contact h2 {
-  font-size: 24px;
-  color: #333;
-}
-
-#contact p {
-  font-size: 16px;
-  color: #555;
-}
-
-#contact ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-#contact ul li {
-  margin-bottom: 10px;
-}
-
-#contact ul li strong {
-  font-weight: bold;
 }
