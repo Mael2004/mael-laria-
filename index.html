@@ -5,8 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Les activités de Maël et Laria</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+  <!-- Bouton Mode Sombre -->
+  <button id="themeToggle" class="theme-btn">Mode Sombre</button>
+
+  <!-- Barre de Navigation -->
+  <nav class="navbar">
+    <a href="#activites" class="nav-link">Activités</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </nav>
+
   <!-- En-tête du site -->
   <header>
     <h1>Les activités de Maël et Laria</h1>
@@ -23,30 +33,60 @@
   <!-- Section Activités -->
   <section id="activites">
     <h2>Nos Activités</h2>
-
-    <!-- Première activité -->
     <div class="activite">
       <h3>Notre balade romantique à Ramena</h3>
-      <img src="ramena.jpg" alt="Photo de Ramena" style="width:100%; max-width:600px;">
+      <img src="ramena.jpg" alt="Photo de Ramena" class="activity-img small-img">
       <p>Nous avons passé une journée inoubliable à Ramena, avec une magnifique vue sur la plage et des moments incroyables à partager.</p>
     </div>
-
-    <!-- Deuxième activité -->
     <div class="activite">
       <h3>Notre soirée spéciale</h3>
-      <img src="soiree-speciale.jpg" alt="Soirée spéciale" style="width:100%; max-width:600px;">
-      <p>Une soirée trés spécial car elle est revenu vers moi apres plus mois d'amour a distance, remplie de rires et d’amour. Une expérience gravée dans nos cœurs.</p>
+      <img src="photo 2.jpeg" alt="premier rencontre" class="activity-img small-img">
+      <p>Heureux d'etre enfin avec elle.</p>
+    </div>
+    <div class="activite">
+      <h3>Notre soirée spéciale</h3>
+      <img src="soire.jpg" alt="Soirée spéciale" class="activity-img small-img">
+      <p>Une soirée sous les étoiles, remplie de rires et d’amour. Une expérience gravée dans nos cœurs.</p>
     </div>
   </section>
+
+  <!-- Formulaire de Contact -->
+  <section id="contact">
+    <h2>Contactez-nous</h2>
+    <form>
+      <input type="text" placeholder="Nom" required>
+      <input type="email" placeholder="Email" required>
+      <textarea placeholder="Message" required></textarea>
+      <button type="submit" class="btn">Envoyer</button>
+    </form>
+    <p>Ou contactez-nous directement :</p>
+    <ul>
+      <li><i class="fas fa-envelope"></i> maelaly2004com@gmail.com</li>
+      <li><i class="fas fa-phone"></i> +261 34 70 102 52</li>
+      <li><i class="fas fa-map-marker-alt"></i> Madagascar, Ambilobe 204 Anoronal</li>
+    </ul>
+  </section>
+
+  <!-- Bouton Retour en Haut -->
+  <button id="scrollTop" class="scroll-btn">↑</button>
+
+  <!-- Script pour les interactions -->
+  <script>
+    // Mode sombre
+    const toggleTheme = document.getElementById('themeToggle');
+    toggleTheme.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+
+    // Bouton Retour en Haut
+    const scrollTopButton = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      scrollTopButton.style.display = window.scrollY > 100 ? 'block' : 'none';
+    });
+
+    scrollTopButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
-<!-- À insérer dans ton fichier HTML -->
-<section id="contact">
-  <h2>Contactez-moi</h2>
-  <p>Vous pouvez me joindre via les moyens suivants  si vous voulez que je vous crée votre propres site web :</p>
-  <ul>
-    <li><strong>Email :</strong> maelaly2004aly@gmail.com</li>
-    <li><strong>Téléphone :</strong> +261 34 70 102 52</li>
-    <li><strong>Adresse :</strong> MADAGASCAR AMBILOBE 204 ANORONAL</li>
-  </ul>
-</section>
